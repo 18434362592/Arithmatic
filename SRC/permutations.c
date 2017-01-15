@@ -65,12 +65,10 @@ int main()
 		printf("\n");
 	}
 	
-	/*for(i=0;i<returnSize;i++)
+	for(i=0;i<returnSize1;i++)
 	{
-		for(j=0;j<numsSize;j++)	
-			printf("%d ",res[j][i]);
-		printf("\n");
-	}*/
-	//free(res);
+		free(res[i]);
+	}
+	free(res);
 }
 
