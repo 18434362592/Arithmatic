@@ -1,9 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
+static int count=0;
 void perm(int *nums,int numsSize,int** res,int start,int end,int* returnSize) 
 {
 	if(start==end)
 	{
+		count++;
 		int i=0;
 		int *temp=(int*)malloc(numsSize*sizeof(int));
 		for(;i<numsSize;i++)
@@ -17,6 +19,8 @@ void perm(int *nums,int numsSize,int** res,int start,int end,int* returnSize)
 	int i=start;
 	for(;i<=end;i++)
 	{
+		printf("(%d , %d) ",start,i);
+		count++;
 		int temp=nums[i];	
 		nums[i]=nums[start];
 		nums[start]=temp;
@@ -50,11 +54,11 @@ int** permute(int* nums, int numsSize, int *returnSize) {
 
 int main()
 {
-	int nums[3]={1,2,3};
+	int nums[5]={1,2,3,4,5};
 	int size=0;
-	int** res=permute(nums,3,&size);
+	int** res=permute(nums,5,&size);
 	int i=0,j=0;
-	int numsSize=3;
+	int numsSize=5;
 	int returnSize1=returnN(numsSize);
 	for(i=0;i<returnSize1;i++)
 	{
@@ -70,5 +74,7 @@ int main()
 		free(res[i]);
 	}
 	free(res);
+	
+	printf("count is %d",count);
 }
 
