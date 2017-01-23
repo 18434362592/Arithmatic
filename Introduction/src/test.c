@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include "sort.h"
 #include "permutations.h"
+#include "zhimi.h"
 void RandomArray(int* nums,int size,int max)
 {
 	int i=0;
@@ -13,7 +14,7 @@ void RandomArray(int* nums,int size,int max)
 }
 
 #define N 3
-int main()
+/*int main()
 {
 	int i,j;
 	int nums[N]={1,1,2};
@@ -35,6 +36,27 @@ int main()
 	printf("total time taken by CPU is %f",(double)clock_total);
 	//void free_permutations(int nums,int** res);
 	free_permutations(N,res);
+}*/
+
+int main()
+{
+	//double compute(double HP1,double attack1,double HP2,double attack2)
+	double HP1,attack1,HP2,attack2;
+	printf("please input HP1 attack1 and HP2 attack2\n");
+	scanf("%lf%lf%lf%lf",&HP1,&attack1,&HP2,&attack2);
+	double result=compute(HP1,attack1,HP2,attack2);
+	printf("\n*************\nthe optimal attack is %.3lf\n",result);
+	
+	//int zhimi_isOptimal(double* result,double HP1,double attack1,double HP2,double attack2)
+	int isP=zhimi_isOptimal(&result,HP1,attack1,HP2,attack2);
+	if(isP==0)
+	{
+		printf("\nthe results is false!!!!!");
+	}
+	else
+	{
+		printf("\nthe results is true!!!!!");
+	}
 }
 
 
