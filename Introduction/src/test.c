@@ -13,32 +13,35 @@ void RandomArray(int* nums,int size,int max)
 	}
 }
 
-#define N 3
-/*int main()
+void Print_Arrays(int* nums,int size)
+{
+	int i;
+	for(i=0;i<size;i++)
+	{
+		printf(" %d ",nums[i]);
+	}
+	printf("\n");
+}
+
+#define N 1000
+int main()
 {
 	int i,j;
-	int nums[N]={1,1,2};
-	int returnSize=0;
-	clock_t clock_start,clock_end,clock_total;
-	clock_start=clock();
-	//int** permuteUnique(int* nums, int numsSize, int* returnSize);
-	int** res=permuteUnique(nums,N,&returnSize);
-	clock_end=clock();
-	clock_total=(double)clock_end-clock_start;
-	for(i=0;i<returnSize;i++)
+	int arrays[N];
+	RandomArray(arrays,N,N*2);
+	Print_Arrays(arrays,N);
+	//void merge_sort(int* nums,int start,int end);
+	merge_sort(arrays,0,N-1);
+	Print_Arrays(arrays,N);
+	//int test_sort(int *nums,int size);
+	if(test_sort(arrays,N)==1)
 	{
-		for(j=0;j<N;j++)
-		{
-			printf("%d ", res[i][j]);
-		}
-		printf("\n");
+		printf("The result is right!!!");
 	}
-	printf("total time taken by CPU is %f",(double)clock_total);
-	//void free_permutations(int nums,int** res);
-	free_permutations(N,res);
-}*/
+	else printf("The result is false!!!");
+}
 
-int main()
+/*int main()
 {
 	//double compute(double HP1,double attack1,double HP2,double attack2)
 	double HP1,attack1,HP2,attack2;
@@ -57,9 +60,9 @@ int main()
 	{
 		printf("\nthe results is true!!!!!");
 	}
-}
+}*/
 
-
+ 
 
 
 
