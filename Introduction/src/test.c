@@ -1,9 +1,11 @@
 #include <time.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <math.h>
 #include "sort.h"
 #include "permutations.h"
 #include "zhimi.h"
+#include "firework.h"
 void RandomArray(int* nums,int size,int max)
 {
 	int i=0;
@@ -23,7 +25,7 @@ void Print_Arrays(int* nums,int size)
 	printf("\n");
 }
 
-#define N 1000
+/*#define N 1000
 int main()
 {
 	int i,j;
@@ -39,28 +41,18 @@ int main()
 		printf("The result is right!!!");
 	}
 	else printf("The result is false!!!");
-}
-
-/*int main()
-{
-	//double compute(double HP1,double attack1,double HP2,double attack2)
-	double HP1,attack1,HP2,attack2;
-	printf("please input HP1 attack1 and HP2 attack2\n");
-	scanf("%lf%lf%lf%lf",&HP1,&attack1,&HP2,&attack2);
-	double result=compute(HP1,attack1,HP2,attack2);
-	printf("\n*************\nthe optimal attack is %.3lf\n",result);
-	
-	//int zhimi_isOptimal(double* result,double HP1,double attack1,double HP2,double attack2)
-	int isP=zhimi_isOptimal(&result,HP1,attack1,HP2,attack2);
-	if(isP==0)
-	{
-		printf("\nthe results is false!!!!!");
-	}
-	else
-	{
-		printf("\nthe results is true!!!!!");
-	}
 }*/
+
+int main()
+{
+	//void fires(double nC_0,double nH_0,double nO_0,double nN_0,double Kw)
+	double nC_0=25.5243;
+	double nH_0=33.1277;
+	double nO_0=33.0757;
+	double nN_0=9.3395;
+	double Kw=7.296;
+	fires( nC_0, nH_0, nO_0, nN_0, Kw);
+}
 
  
 
