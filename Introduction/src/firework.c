@@ -2,7 +2,7 @@
 #include <math.h>
 #define P 70
 static double k1,k2,k3,k4,k5,k6;
-static int times=0;
+static int times=1;
 int compute_it(double nC,double nH,double nO,double nN,double Kw,double *nCO2_cp,double *nCO_cp,double *nH2O_cp,double *nH2_cp,double *nN2_cp);
 void second(double *nCO2_1,double *nCO_1,double *nH2O_1,double *nH2_1,double *nN2_1,double nC_0,double nH_0,double nO_0,double nN_0,double Kw);
 
