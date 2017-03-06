@@ -48,7 +48,8 @@ void fires(double nC_0,double nH_0,double nO_0,double nN_0,double Kw)
 
 void second(double *nCO2_1,double *nCO_1,double *nH2O_1,double *nH2_1,double *nN2_1,double nC_0,double nH_0,double nO_0,double nN_0,double Kw)
 {
-	double n_1=(*nCO2_1) + (*nCO_1) + (*nH2O_1) + (*nH2_1)+ (*nN2_1);
+	double n_1=(*nCO2_1) + (*nCO_1) + (*nH2O_1) + (*nH2_1)+ (*nN2_1) ;
+	printf(" this is n_1 %0.4f  \n\n",n_1);
 	double nH2_2 = sqrt(k3*(*nH2_1)/(P/n_1));
 	double nOH_2 = k2*(*nH2O_1)/(sqrt((*nH2_1)*P/(n_1)));
 	double nNO_2 = k4*(*nH2O_1)*(sqrt(*nN2_1))/((*nH2_1)*sqrt(P/(n_1)));
@@ -59,8 +60,9 @@ void second(double *nCO2_1,double *nCO_1,double *nH2O_1,double *nH2_1,double *nN
 	printf("nH is %.4lf\nnOH is %.4lf\nnNO is %.4lf\nnO is %.4lf\nnO2 is %.4lf\n",nH2_2,nOH_2,nNO_2,nO_2,nO2_2);
 	double n0C_2=nC_0;
 	double n0H_2 = nH_0 -nH2_2 - nOH_2;
-	double n0O_2 = nO_0 - nOH_2 - nNO_2;
+	double n0O_2 = nO_0 - nOH_2 - nNO_2 - nO_2 - 2*nO2_2;
 	double n0N_2 = nN_0 - nNO_2;
+	printf("\n\n\nthe object is that nH is %.4lf\nnOH is %.4lf\nnNO is %.4lf\nnO is %.4lf\n\n\n",n0C_2,n0H_2,n0O_2,n0N_2);
 	int continue1=compute_it(n0C_2,n0H_2,n0O_2,n0N_2,Kw,nCO2_1,nCO_1,nH2O_1,nH2_1,nN2_1);
 	
 	//continue???
