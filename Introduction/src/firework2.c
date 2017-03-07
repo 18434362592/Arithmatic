@@ -30,7 +30,7 @@ void firesecond()
 	int i,j;
 	q=0;
 	for(i=0;i<5;i++)   
-		q=q+b[i];
+		q=q+b[i]+c[i];
 	printf(" this is the q %0.4f \n\n",q);
 	c[0]=sqrt(K[2]*b[3]/(P/q));
 	c[1]=K[1]*b[2]/sqrt(b[3]*P/q);
