@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
+#include <graphics.h>
 #include "sort.h"
 #include "permutations.h"
 #include "zhimi.h"
@@ -46,15 +47,8 @@ int main()
 
 int main()
 {
-	//void fires(double nC_0,double nH_0,double nO_0,double nN_0,double Kw)
-	double nC_0=25.5243;
-	double nH_0=33.1277;
-	double nO_0=33.0757;
-	double nN_0=9.3395;
-	double Kw=7.296;
-	fires( nC_0, nH_0, nO_0, nN_0, Kw);
-	
-	fireone();
+	int gd=DETECT,gm=0;
+	initgraph(&gd,&gm,"");
 }
 
  
