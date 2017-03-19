@@ -3,13 +3,13 @@ vpath %.c src
 vpath %.h libs
 CC = gcc
 INCLUDE = -I libs
-CFLAGS = -g -W -I libs 
+CFLAGS = -g -W -I libs `pkg-config --cflags gtk+-3.0`
 OBJ_FILE = obj/
 OBJ = $(addprefix $(OBJ_FILE),test.o sort.o permutations.o zhimi.o firework.o firework2.o)
 BIN = bin
 
 $(BIN)/test: $(OBJ) | $(BIN)
-	$(CC) $(CFLAGS) -o $@ $^ -lm
+	$(CC) $(CFLAGS) -o $@ $^ -lm `pkg-config --libs gtk+-3.0`
 
 $(OBJ_FILE)test.o: test.c sort.h
 
